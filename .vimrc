@@ -1,9 +1,29 @@
 execute pathogen#infect()
-
 syntax on
+
+" pathogen load
+filetype off
+
+
+call pathogen#infect()
+call pathogen#helptags()
+
 filetype plugin indent on
+syntax on
+
+" end of pathogen load
 
 set cursorline
+
+
+" python mode stuff:
+" Ignore E302 expected 2 blank lines, found 1 [pep8]
+" Ignore E501 line too long
+" Ignore W391 blank line at end of file [pep8]
+"
+
+let g:pymode_lint_ignore="E302,E501,W391"
+" end of python mode stuff
 
 
 " Show tab #s
